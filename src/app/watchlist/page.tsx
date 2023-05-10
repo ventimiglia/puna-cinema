@@ -1,26 +1,12 @@
-'use client'
+import WatchlistClient from "./(components)";
 
-import { useContext } from "react";
-import { WatchlistContext } from "../(home)/Context/WatchList";
-import { Container } from "../styles";
-import Card from "../(home)/Card";
+export const metadata = {
+  title: "Puna Watchlist",
+  description: "The new list of movies",
+};
 
-const WatchlistClient = () => {
-  const { watchlist } = useContext(WatchlistContext)
-  return (
-    <Container>
-      <h1 className="text-4xl mb-4">
-        Watchlist
-      </h1>
-      {watchlist?.reverse().map((movie) => (
-        <Card
-          key={movie.id}
-          movie={movie}
-          filterApplied={null}
-        />
-      ))}
-    </Container>
-  )
-}
+const WatchlistPage = () => {
+  return <WatchlistClient />;
+};
 
-export default WatchlistClient
+export default WatchlistPage;
